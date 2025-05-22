@@ -1,56 +1,61 @@
 // 言語変更機能
 {
-    const toggleBtn = document.getElementById('lang-toggle');
-    const langOptions = document.querySelector('.lang-options');
+  const toggleBtn = document.getElementById('lang-toggle');
+  const langOptions = document.querySelector('.lang-options');
 
+  if (toggleBtn && langOptions) {
     toggleBtn.addEventListener('click', () => {
-        langOptions.classList.toggle('active');
+      langOptions.classList.toggle('active');
     });
 
     // ドキュメント全体のクリックイベントを監視
     document.addEventListener('click', (e) => {
-        // 言語オプションとトグルボタン以外をクリックした場合
-        if (!langOptions.contains(e.target) && !toggleBtn.contains(e.target)) {
-            langOptions.classList.remove('active');
+      if (!langOptions.contains(e.target) && !toggleBtn.contains(e.target)) {
+        langOptions.classList.remove('active');
+      }
+    });
+  }
+}
+
+
+// ハンバーガーメニュー
+const hamburger = document.querySelector('.hamburger-menu');
+const nav = document.querySelector('nav');
+const navLinks = document.querySelectorAll('nav ul li a');
+
+if (hamburger && nav) {
+    // ハンバーガーメニューのクリックイベント
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+
+    // メニューリンクのクリックイベント
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
+        });
+    });
+
+    // 画面外クリックでメニューを閉じる
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !nav.contains(e.target)) {
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
         }
     });
 }
 
-// 横スクロール
-const container = document.querySelector('.Container');
-const boxContainer = document.querySelector('.Box-Container');
-const leftArrow = document.querySelector('.Arrow.left');
-const rightArrow = document.querySelector('.Arrow.right');
-const scrollAmount = 200; // ３回で最大値まで行く程度の数値
-
-leftArrow.addEventListener('click', () => {
-  const containerWidth = container.offsetWidth;
-  const maxScrollAmount = boxContainer.offsetWidth - containerWidth;
-  const currentScrollAmount = Math.abs(parseInt(boxContainer.style.transform.split('(')[1])) || 0;
-  const newScrollAmount = Math.max(currentScrollAmount - scrollAmount, 0);
-  boxContainer.style.transform = `translateX(-${newScrollAmount}px)`;
-  updateArrowVisibility(newScrollAmount, maxScrollAmount);
+// スクロールアニメーション
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY;
+  const elements = document.querySelectorAll('.fade-in');
+  
+  elements.forEach(element => {
+    const elementPosition = element.getBoundingClientRect().top + scrollPosition;
+    if (scrollPosition > elementPosition - window.innerHeight) {
+      element.classList.add('active');
+    }
+  });
 });
-
-rightArrow.addEventListener('click', () => {
-  const containerWidth = container.offsetWidth;
-  const maxScrollAmount = boxContainer.offsetWidth - containerWidth;
-  const currentScrollAmount = Math.abs(parseInt(boxContainer.style.transform.split('(')[1])) || 0;
-  const newScrollAmount = Math.min(currentScrollAmount + scrollAmount, maxScrollAmount);
-  boxContainer.style.transform = `translateX(-${newScrollAmount}px)`;
-  updateArrowVisibility(newScrollAmount, maxScrollAmount);
-});
-
-function updateArrowVisibility(scrollAmount, maxScrollAmount) {
-  if (scrollAmount === 0) {
-    leftArrow.classList.add('Hide');
-  } else {
-    leftArrow.classList.remove('Hide');
-  }
-
-  if (scrollAmount === maxScrollAmount) {
-    rightArrow.classList.add('Hide');
-  } else {
-    rightArrow.classList.remove('Hide');
-  }
-}

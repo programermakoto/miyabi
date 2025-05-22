@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- TD -->
-    <title>Document</title>
+    <title>　　　</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="canonical" href="https://general-knowledge-university.com/" />
     <link rel="stylesheet" href="CSS/style.css">
     <script src="JS/main.js" defer></script>
+    <script src="JS/scroll.js" defer></script>
     <meta property="og:title" content="ジェネラル・ノウレッジ大学 | GKUオンラインスクール【公式】プログラミング 動画編集 デザイン ADOBE学習スクール Webマーケティング" />
     <meta property="og:description"
         content="ジェネラル・ノウレッジ大学は【アプリ開発、サイト制作、マーケティング戦略、動画編集】などの副業・転職で必須なスキルをIT業界最大の知識を公開している公式ページ" />
@@ -54,13 +55,18 @@
             <img src="images/cut.webp" alt="区切り画像">
             <img src="images/subu-logo.webp" alt="会社ロゴ">
         </a>
+        <button class="hamburger-menu" aria-label="メニュー">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <!-- ページ内外リンク -->
         <nav>
             <ul>
-                <li><a href="#">ABOUT US</a></li>
-                <li><a href="#">SERVICE</a></li>
-                <li><a href="#">SHOP</a></li>
-                <li><a href="#">COMPANY</a></li>
+                <li><a href="about-us/index.html">ABOUT US</a></li>
+                <li><a href="service/index.html">SERVICE</a></li>
+                <li><a href="#shop">SHOP</a></li>
+                <li><a href="about-us/form.html">CONTACT</a></li>
                 <!-- 言語変更-->
                 <!-- 最初に見える日本語ボタン -->
                 <li id="lang-toggle"><img src="images/lang.webp" alt=""></li>
@@ -68,7 +74,7 @@
         </nav>
         <div class="lang-options">
             <a href="/">日本語</a>
-            <a href="　　">英語</a>
+            <a href="">English</a>
         </div>
     </header>
     <section>
@@ -85,8 +91,10 @@
                 お客様も<wbr/>巻き込んで<wbr/>仲間の誰もが<wbr/>何かで1番に<wbr/>なれる<wbr/>育成方針や<br>
                 全従業員の<wbr/>物心両面の<wbr/>幸福を<wbr/>追求すると<wbr/>同時に<br>
                 ファッションセンスの<wbr/>探究心を<wbr/>日本全土<wbr/>に還元</p>
-            <a class="out-btn" href="#">ABOUT US <img class="yazirushi" src="images/right-yazirushi.svg" alt="会社詳細" ><img class="yazirushi" src="images/right-yazirushi.svg" alt="会社詳細"></a>
-            <img src="images/about.webp" alt="about画像">
+            <a class="out-btn" href="about-us/index.html">ABOUT US <img class="yazirushi2"
+                    src="images/right-yazirushi.svg" alt="会社詳細"><img class="yazirushi2" src="images/right-yazirushi.svg"
+                    alt="会社詳細"></a>
+            <img class="about-image" src="images/about.webp" alt="about画像">
             <h1>FIGHT<br>
                 FOR<br>
                 FREEDOM.</h1>
@@ -98,29 +106,31 @@
                 <div class="item">
                     <h2>Styling.</h2>
                     <p>パーソナルスタイリング</p>
-                    <img src="images/service-styling.webp" alt="">
+                    <img src="images/service-styling.webp" alt="Styling画像">
                 </div>
                 <div class="item">
-                    <h2>Fiting.</h2>
-                    <p>パーソナルスタイリング</p>
-                    <img src="images/service-fiting.webp" alt="">
+                    <h2>Fitting.</h2>
+                    <p>フィッティング</p>
+                    <img src="images/service-fiting.webp" alt="Fitting画像">
                 </div>
                 <div class="item">
                     <h2>Support.</h2>
-                    <p>パーソナルスタイリング</p>
-                    <img src="images/service-support.webp" alt="">
+                    <p>オンラインショップサポート</p>
+                    <img src="images/service-support.webp" alt="Support画像">
                 </div>
             </div>
-            <a class="out-btn" href="#">SEE MORE <img class="yazirushi" src="images/right-yazirushi.svg" alt="会社詳細" ><img class="yazirushi" src="images/right-yazirushi.svg" alt="会社詳細"></a>
+            <a style="margin: 0 auto;" class="out-btn" href="service/index.html">SEE MORE <img class="yazirushi2"
+                    src="images/right-yazirushi.svg" alt="会社詳細"><img class="yazirushi2" src="images/right-yazirushi.svg"
+                    alt="会社詳細"></a>
         </article>
     </section>
 
     <!-- store(shopItem) -->
-    <section>
+    <section id="shop">
         <h1>SHOP</h1>
         <article>
             <div class="store">
-                <img src="images/CREZY.webp">
+                <img class="store-image" src="images/CREZY.webp">
                 <h2>CRAZY INK</h2>
                 <address>
                     <p>ADRESS</p>
@@ -134,10 +144,9 @@
                     <p>OPEN</p>
                     <p>10:00~20:00</p>
                 </address>
-                <a class="in-btn" href="">ONLINE SHOP <img class="yazirushi" src="images/right-yazirushi.svg" alt="会社詳細" ><img class="yazirushi" src="images/right-yazirushi.svg" alt="会社詳細"></a>
             </div>
             <div class="store">
-                <img src="images/crazy-logo.webp">
+                <img class="store-image" src="images/crazy-logo.webp">
                 <h2>MOJO</h2>
                 <address>
                     <p>ADRESS</p>
@@ -151,12 +160,30 @@
                     <p>OPEN</p>
                     <p>11:00~20:00</p>
                 </address>
-                <a class="in-btn" href="">ONLINE SHOP <img class="yazirushi" src="images/right-yazirushi.svg" alt="会社詳細" ><img class="yazirushi" src="images/right-yazirushi.svg" alt="会社詳細"></a>
             </div>
             </div>
     </section>
+    <!-- store(オンラインストアー) -->
+    <section id="shop">
+        <h1>ONLINE STORE</h1>
+        <article>
+            <div class="store">
+                <img class="store-image" src="images/CREZY.webp">
+                <h2>ORIGINAL SHOP</h2>
+                <a class="in-btn" href="https://xofficial.theshop.jp">ONLINE SHOP <img class="yazirushi2"
+                        src="images/right-yazirushi.svg" alt="会社詳細"><img class="yazirushi"
+                        src="images/right-yazirushi.svg" alt="会社詳細"></a>
+            </div>
+            <div class="store">
+                <img class="store-image" src="images/crazy-logo.webp">
+                <h2>SELECT SHOP</h2>
+                <a class="in-btn" href="https://mojoosaka.base.shop/">ONLINE SHOP <img class="yazirushi2"
+                        src="images/right-yazirushi.svg" alt="会社詳細"><img class="yazirushi"
+                        src="images/right-yazirushi.svg" alt="会社詳細"></a>
+            </div>
+    </section>
     <!-- new-arrival -->
-    <section>
+    <section class="arrival">
         <h1>NEW ARRIVAL</h1>
         <article class="Container">
             <div class="Box-Container">
@@ -192,10 +219,11 @@
                 </div>
                 <!-- 必要な数の.Box要素を追加 -->
             </div>
-            <div class="Arrow left"><</div>
-            <div class="Arrow right">></div>
+            <div class="Arrow left">《</div>
+            <div class="Arrow right">》</div>
         </article>
-        <a class="in-btn" href="#">SEE MORE <img class="yazirushi" src="images/right-yazirushi-white.svg" alt="会社詳細" ><img class="yazirushi" src="images/right-yazirushi-white.svg" alt="会社詳細"></a>
+        <a class="in-btn" href="#">SEE MORE <img class="yazirushi" src="images/right-yazirushi-white.svg"
+                alt="会社詳細"><img class="yazirushi" src="images/right-yazirushi-white.svg" alt="会社詳細"></a>
     </section>
     <!-- company -->
     <section class="comoany">
@@ -224,6 +252,10 @@
             <p>従業員数</p>
             <p>8人</p>
         </div>
+        <div class="info">
+            <a href="about-us/legal.html">特定商取引法に基づき表記</a><a href="about-us/privacy.html">プライバシポリシー</a>
+        </div>
+
     </section>
     <!-- footer -->
     <footer>
@@ -235,11 +267,20 @@
         </label>
         <label>
             <div>
-                <img src="images/call.webp" alt="call-number">
+                <img src="images/male.png" alt="call-number">
             </div>
             <p>x_onepiece_1201@hotmaiol.com</p>
         </label>
-        <a class="in-btn" href="">CONTACT US<img class="yazirushi" src="images/right-yazirushi-white.svg" alt="会社詳細" ><img class="yazirushi" src="images/right-yazirushi-white.svg" alt="会社詳細" ></a>
+        <a class="in-btn" href="about-us/form.html">CONTACT US<img class="yazirushi"
+                src="images/right-yazirushi-white.svg" alt="会社詳細"><img class="yazirushi"
+                src="images/right-yazirushi-white.svg" alt="会社詳細"></a>
+        <div class="footer-logo">
+            <div class="image-items">
+                <img src="images/logo.webp" alt="会社ロゴ">
+                <img src="images/cut.webp" alt="区切り画像">
+                <img src="images/subu-logo.webp" alt="会社ロゴ">
+            </div>
+        </div>
     </footer>
 </body>
 
